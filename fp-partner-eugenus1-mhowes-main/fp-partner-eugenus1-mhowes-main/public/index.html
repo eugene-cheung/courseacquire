@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--
+  Name: Mason Howes, Eugene Cheung
+  Date: December 10, 2024
+  Section: CSE 154 AD
+
+  This is the index.html file that builds the backbone of the CourseAcquire webpage.
+  It contains a multitude of selectors that allow for customization of filter options, and
+  redirect points to other parts of the website. It also buffs out each of the dropdowns
+  the user can access.
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CourseAcquire</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/courseacquire.png">
+  </head>
+
+  <body>
+    <!-- Page Navigation Bar-->
+    <section class="nav-bar">
+
+      <!-- Menu & Archive Functionality -->
+      <article id="header-content">
+        <div class="logo-holder">
+          <a href="index.html">
+            <img id="ca" src="img/courseacquire.png" alt="CourseAcquire" title="Home">
+          </a>
+        </div>
+        <img class="icon" id="hbm" src="img/hamburger.svg" alt="Menu" title="Menu">
+        <img class="icon" id="archive" src="img/bookmark.svg" alt="Archive" title="Saved Courses">
+
+        <!-- Saved Courses Dropdown -->
+        <section id="save-dd" class="save-dd hidden">
+          <section>
+            <h2>Saved Courses</h2>
+            <img class="icon" id="close-save" src="img/close.svg" alt="X" title="Close">
+          </section>
+          <article id="save-container">
+            <p>Save courses to enroll!</p>
+          </article>
+          <article id="quick-nav">
+            <button id="to-checkout">Go to Checkout</button>
+          </article>
+        </section>
+      </article>
+
+      <!-- Page Title -->
+      <article id="title">
+        <h2>Course Registration</h2>
+      </article>
+
+      <section id="signin-reminder">
+        <article id="signin-prompt">
+          <p>Ready to register?<br>Click here to sign in!</p>
+        </article>
+        <div class="pointed-end"></div>
+      </section>
+
+      <!-- Login/Signup Functionality-->
+      <article id="login">
+        <img class="icon" id="profile" src="img/login.svg" alt="Login" title="Login">
+        <section id="logged-in-pfp" class="hidden">
+          <p id="pfp-letter"></p>
+        </section>
+        <!-- Login Dropdown Menu -->
+        <section id="drop-down" class="drop-down hidden">
+          <section>
+            <h2>Welcome</h2>
+            <img class="icon" id="close-dd" src="img/close.svg" alt="X">
+          </section>
+          <article>
+            <img src="img/login.svg" alt="Login">
+            <p>Please sign in below</p>
+          </article>
+
+          <!-- Login Form -->
+          <form>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+          </form>
+          <button id="login-button">Sign in</button>
+
+          <p id="create-acc">New user? <a href="register.html">Create an account</a></p>
+        </section>
+
+        <!-- Logout Dropdown Menu -->
+        <section id="lo-drop-down" class="drop-down hidden">
+          <section>
+            <h4 id="welcome-prompt"></h4>
+            <img class="icon" id="lo-close-dd" src="img/close.svg" alt="X">
+          </section>
+          <article>
+            <section id="logged-in-pfp-sm">
+              <p id="pfp-letter-sm"></p>
+            </section>
+          </article>
+          <div id="welcome-sm">
+            <p id="user-sm">Hello, user!</p>
+          </div>
+          <button id="logout-button">Sign out</button>
+        </section>
+      </article>
+
+    </section>
+
+    <!-- Search Bar Functionality -->
+    <section id="search-section">
+      <div id="search-container">
+        <img class="icon" id="filter" src="img/filter.svg" alt="Filter">
+        <form id="course-form">
+          <input type="text" id="course-search" name="search" placeholder="What's your course?">
+          <button type="submit">
+            <img class="icon" src="img/search.svg" alt="Search">
+          </button>
+        </form>
+      </div>
+      <div id="course-container" class="course-container">
+        <!-- Course previews added dynamically -->
+      </div>
+    </section>
+
+    <section id="more-course-details" class="hidden">
+      <article id="course-details">
+        <div id="details-header">
+          <p>More Details</p>
+          <img class="icon" id="mcd-close-dd" src="img/close.svg" alt="X">
+        </div>
+        <h2 id="d-title">XX101 - XXXXX</h2>
+        <div id="details">
+          <p id="d-major"> Major: XXX</p>
+          <p id="d-professor">Professor: XXX</p>
+          <p id="d-duration">Duration: XXX</p>
+          <p id="d-credits">Credits: X</p>
+          <p id="d-prereqs">Prerequisites: XXX, XXX, XXX</p>
+          <p id="d-time">Time: XXXX</p>
+          <p id="d-description">Description: XXXXXXXXX</p>
+          <p id="d-seats">Seats available: XX</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Filter Section -->
+    <section id="filter-section-container">
+      <section id="filter-section" class="invisible">
+        <article class="filter-header">
+          <p class="filter-text">Filters</p>
+          <img class="icon" id="close-fm" src="img/close.svg" alt="X">
+        </article>
+        <article class="top-options">
+          <div class="category" id="credit-number">
+            <label for="credit-range">Maximum Credits:</label>
+            <article>
+              <input type="range" id="credit-range" min="1" max="5" value="5" step="1">
+              <span id="credit-value">5</span>
+            </article>
+          </div>
+          <div class="category" id="major-filter">
+            <label for="major-select">Major:</label>
+            <select id="major-select">
+              <option value="all">All</option>
+              <!-- Options will be dynamically generated -->
+            </select>
+          </div>
+        </article>
+        <div class="category" id="time-category">
+          <div class="selectors">
+            <label for="time-range-start">Select Time Range:</label>
+            <div class="time-dropdowns">
+              <div class="dropdown">
+                <select id="time-range-start">
+                  <option value="8:00AM">8:00AM</option>
+                  <option value="9:00AM">9:00AM</option>
+                  <option value="10:00AM">10:00AM</option>
+                  <option value="11:00AM">11:00AM</option>
+                  <option value="12:00PM">12:00PM</option>
+                  <option value="1:00PM">1:00PM</option>
+                  <option value="2:00PM">2:00PM</option>
+                  <option value="3:00PM">3:00PM</option>
+                  <option value="4:00PM">4:00PM</option>
+                  <option value="5:00PM">5:00PM</option>
+                  <option value="6:00PM">6:00PM</option>
+                  <option value="7:00PM">7:00PM</option>
+                  <option value="8:00PM">8:00PM</option>
+                </select>
+                <img class="icon" src="img/clock.svg" alt="Clock">
+              </div>
+              <span>to</span>
+              <div class="dropdown">
+                <select id="time-range-end">
+                  <option value="8:00AM">8:00AM</option>
+                  <option value="9:00AM">9:00AM</option>
+                  <option value="10:00AM">10:00AM</option>
+                  <option value="11:00AM">11:00AM</option>
+                  <option value="12:00PM">12:00PM</option>
+                  <option value="1:00PM">1:00PM</option>
+                  <option value="2:00PM">2:00PM</option>
+                  <option value="3:00PM">3:00PM</option>
+                  <option value="4:00PM">4:00PM</option>
+                  <option value="5:00PM">5:00PM</option>
+                  <option value="6:00PM">6:00PM</option>
+                  <option value="7:00PM" selected>7:00PM</option>
+                </select>
+                <img class="icon" src="img/clock.svg" alt="Clock">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Hamburger Menu Left Panel -->
+    <section id="hamburger-menu">
+      <article>
+        <h2>Menu</h2>
+        <img class="icon" id="close-hbm" src="img/close.svg" alt="X">
+      </article>
+
+      <article id="hbm-content">
+        <article class="hbm-section-header">
+          <p>
+            <img class="section-logo" src="img/major.svg" alt="Degree Information">
+            Degree Information
+          </p>
+        </article>
+        <section id="view-mm" class="course-suggestion">
+          Audit Your Degree
+        </section>
+        <article class="hbm-section-header">
+          <p>
+            <img class="section-logo" src="img/suggestions.svg" alt="Checkout and Course History">
+            Checkout
+          </p>
+        </article>
+        <section id="checkout" class="course-suggestion">
+          Enroll in Saved Courses
+        </section>
+        <section id="view-ch" class="course-suggestion">
+          View Course History
+        </section>
+      </article>
+    </section>
+  </body>
+</html>

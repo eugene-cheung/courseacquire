@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+  Name: Mason Howes, Eugene Cheung
+  Date: December 10, 2024
+  Section: CSE 154 AD
+
+  This is the checkout html file that builds the backbone of the checkout page of the website.
+  It allows for the user to enroll in different classes that fulfill major and minor requirements.
+  It also allows the javascript file to update important page information like successes,
+  fails, and credit information.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Checkout - Course Registration System</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="checkout.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/courseacquire.png">
+  </head>
+  <body>
+    <!-- Page Navigation Bar-->
+    <section class="nav-bar">
+
+      <!-- Menu & Archive Functionality -->
+      <article id="header-content">
+        <div class="logo-holder">
+          <a href="index.html">
+            <img id="ca" src="img/courseacquire.png" alt="CourseAcquire" title="Home">
+          </a>
+        </div>
+        <img class="icon" id="hbm" src="img/hamburger.svg" alt="Menu" title="Menu">
+      </article>
+
+      <!-- Page Title -->
+      <article id="title">
+        <h2>Checkout Courses</h2>
+      </article>
+
+      <section id="signin-reminder">
+        <article id="signin-prompt">
+          <p>Ready to register?<br>Click here to sign in!</p>
+        </article>
+        <div class="pointed-end"></div>
+      </section>
+
+      <!-- Login/Signup Functionality-->
+      <article id="login">
+        <img class="icon" id="profile" src="img/login.svg" alt="Login" title="Login">
+        <section id="logged-in-pfp" class="hidden">
+          <p id="pfp-letter"></p>
+        </section>
+        <!-- Login Dropdown Menu -->
+        <section id="drop-down" class="drop-down hidden">
+          <section>
+            <h2>Welcome</h2>
+            <img class="icon" id="close-dd" src="img/close.svg" alt="X">
+          </section>
+          <article>
+            <img src="img/login.svg" alt="Login">
+            <p>Please sign in below</p>
+          </article>
+
+          <!-- Login Form -->
+          <form>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+          </form>
+          <button id="login-button">Sign in</button>
+
+          <p id="create-acc">New user? <a href="register.html">Create an account</a></p>
+        </section>
+
+        <!-- Logout Dropdown Menu -->
+        <section id="lo-drop-down" class="drop-down hidden">
+          <section>
+            <h4 id="welcome-prompt"></h4>
+            <img class="icon" id="lo-close-dd" src="img/close.svg" alt="X">
+          </section>
+          <article>
+            <section id="logged-in-pfp-sm">
+              <p id="pfp-letter-sm"></p>
+            </section>
+          </article>
+          <div id="welcome-sm">
+            <p id="user-sm">Hello, user!</p>
+          </div>
+          <button id="logout-button">Sign out</button>
+        </section>
+      </article>
+
+    </section>
+
+    <section class="page-content-container">
+      <div class="page-content">
+        <article id="cart-container">
+          <h2>Your Cart</h2>
+          <div id="cart-items"></div>
+          <p>Total Credits: <span id="total-credits">0</span></p>
+        </article>
+
+        <section class="bottom-content">
+          <div id="enrollment-details">
+            <label for="term-select">Term:</label>
+            <select id="term-select" required>
+              <option value="Winter">Winter</option>
+              <option value="Spring">Spring</option>
+              <option value="Summer">Summer</option>
+              <option value="Autumn">Autumn</option>
+            </select>
+            <label for="year-select">Year:</label>
+            <select id="year-select" required>
+              <!-- Dynamically generated -->
+            </select>
+          </div> 
+          
+          <article id="checkout-container">
+            <button id="confirm-btn">Confirm Your Selection</button>
+            <button id="submit-btn" disabled>Enroll</button>
+            <p id="error-message" class="hidden"></p>
+            <p id="success-message" class="hidden"></p>
+          </article>
+        </section>
+        
+      </div>
+      
+    </section>
+
+    <!-- Hamburger Menu Left Panel -->
+    <section id="hamburger-menu">
+      <article>
+        <h2>Menu</h2>
+        <img class="icon" id="close-hbm" src="img/close.svg" alt="X">
+      </article>
+
+      <article id="hbm-content">
+        <article class="hbm-section-header">
+          <p>
+            <img class="section-logo" src="img/major.svg" alt="Degree Information">
+            Degree Information
+          </p>
+        </article>
+        <section id="view-mm" class="course-suggestion">
+          Audit Your Degree
+        </section>
+        <article class="hbm-section-header">
+          <p>
+            <img class="section-logo" src="img/suggestions.svg" alt="Checkout and Course History">
+            Checkout
+          </p>
+        </article>
+        <section id="checkout" class="course-suggestion">
+          Enroll in Saved Courses
+        </section>
+        <section id="view-ch" class="course-suggestion">
+          View Course History
+        </section>
+      </article>
+    </section>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+  </body>
+</html>

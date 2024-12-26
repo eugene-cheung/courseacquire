@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+  Name: Mason Howes, Eugene Cheung
+  Date: December 10, 2024
+  Section: CSE 154 AD
+
+  This is the register html file that builds the backbone of the register portion of the
+  website. It allows for the user to properly input their email, password and username to
+  make their account.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - CourseAcquire</title>
+  <link href="styles.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="img/courseacquire.png">
+</head>
+<body>
+
+    <!-- Page Navigation Bar-->
+  <section class="nav-bar">
+
+    <!-- Menu & Archive Functionality -->
+    <div class="logo-holder-reg">
+      <a href="index.html">
+        <img id="ca" src="img/courseacquire.png" alt="CourseAcquire">
+      </a>
+    </div>
+  </section>
+
+  <!-- Scrolling Background -->
+  <div class="scroll-bg"></div>
+
+  <section class="register-section">
+    <article class="register-container">
+     <h2>Welcome to CourseAcquire!</h2>
+      <p class="subheader">Please create an account</p>
+      <form id="signup-form">
+        <input type="text" id="signup-username" name="username" placeholder="Username" required>
+        <br>
+        <input type="email" id="signup-email" name="email" placeholder="Email" required>
+        <br>
+        <input type="password" id="signup-password" name="password" placeholder="Password" required>
+        <br>
+        <button type="submit" id="signup-button">Sign Up</button>
+      </form>
+      <p class="existing-user">Already have an account? <a href="/">Sign in here</a></p>
+    </article>
+  </section>
+
+  <script src="register.js"></script>
+</body>
+</html>
